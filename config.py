@@ -1,7 +1,10 @@
 
 class Hyper:
     #time = "2021_08_01 16_16_57"
-    time = "2021_08_08 22_58_57"
+    #time = "2021_08_08 22_58_57"
+    time = "2021_08_11 12_02_37"
+    #time = "2021_08_12 05_59_32"
+    #time = "2021_08_14 10_46_28"
     language = "en"
     HyrdatedTweetLangDir = f"../Summary_Details_files{time}/{language}"
     HyrdatedTweetFile = "tweets.csv"
@@ -13,8 +16,8 @@ class Hyper:
     #Threshold = 400
     SelectedCountries = [ "Australia", "Canada", "China", "France", "Germany", "Ghana", "India",
                          "Ireland", "Italy", "Kenya", "Malaysia", "Netherlands",
-                         "New Zealand", "Nigeria", "Pakistan", "Philippines", 
+                         "New Zealand", "Nigeria", "Pakistan", "Philippines", "the Philippines", 
                          "South Africa", "United Kingdom", "United States"]
-    input_field_names = ['Country', 'English Tweet', 'sentiment', 'is_facemask', 'is_lockdown']
-    output_field_names = ['Country', 'English Tweet', 'sentiment']
+    input_field_names = ['Country', 'Full Text', 'English Tweet', 'sentiment', 'is_facemask', 'is_lockdown']
+    output_field_names = ['Country', 'Full Text', 'English Tweet', 'sentiment']
  

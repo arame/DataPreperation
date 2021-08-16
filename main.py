@@ -22,6 +22,12 @@ def move_files_to_destination_folder():
     Helper.printline(f"Iterate through {no_countries} countries")
     for country in list_dirs:
         i += 1
+        if country == "the Philippines":
+            print(f"country = {country}")
+            country = "Philippines"
+        if country.startswith("The "):
+            print(f"country = {country}")
+            country = country.replace("The ", "")
         country_dir = os.path.join(Hyper.HyrdatedTweetLangDir, country)
         country_file = os.path.join(country_dir, Hyper.HyrdatedTweetFile)
         csv_input = pd.read_csv(country_file, sep=',', error_bad_lines=False, index_col=False, dtype='unicode')
@@ -30,7 +36,7 @@ def move_files_to_destination_folder():
         #if len(csv_input) >= Hyper.Threshold:
         if country in Hyper.SelectedCountries:
             data_dir = os.path.join(Hyper.DestDir, country)
-            Helper.printline(f"Theshold exceeded, copy {country_dir} to {data_dir}")
+            Helper.printline(f"Country selected {country} ({len(csv_input)}), copy {country_dir} to {data_dir}")
             shutil.copytree(country_dir, data_dir)
     
     Helper.printline("    Ended: Move files to data directory")
