@@ -18,6 +18,6 @@ class Hyper:
                          "Ireland", "Italy", "Kenya", "Malaysia", "Netherlands",
                          "New Zealand", "Nigeria", "Pakistan", "Philippines", "the Philippines", 
                          "South Africa", "United Kingdom", "United States"]
-    input_field_names = ['Country', 'Full Text', 'English Tweet', 'sentiment', 'is_facemask', 'is_lockdown']
-    output_field_names = ['Country', 'Full Text', 'English Tweet', 'sentiment']
+    input_field_names = ['Country', 'Full Text', 'clean_tweet', 'sentiment', 'is_facemask', 'is_lockdown']
+    output_field_names = ['Country', 'Full Text', 'clean_tweet', 'sentiment']
  

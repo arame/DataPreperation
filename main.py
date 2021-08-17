@@ -15,19 +15,12 @@ def move_files_to_destination_folder():
     #
     Helper.printline("   Started: Move files to data directory")
     Helper.create_directory(Hyper.DestDir)
-    Hyper.HyrdatedTweetLangDir
     list_dirs = Helper.list_country_folders(Hyper.HyrdatedTweetLangDir)
     i = 0
     no_countries = len(list_dirs)
     Helper.printline(f"Iterate through {no_countries} countries")
     for country in list_dirs:
         i += 1
-        if country == "the Philippines":
-            print(f"country = {country}")
-            country = "Philippines"
-        if country.startswith("The "):
-            print(f"country = {country}")
-            country = country.replace("The ", "")
         country_dir = os.path.join(Hyper.HyrdatedTweetLangDir, country)
         country_file = os.path.join(country_dir, Hyper.HyrdatedTweetFile)
         csv_input = pd.read_csv(country_file, sep=',', error_bad_lines=False, index_col=False, dtype='unicode')
@@ -51,7 +44,7 @@ def combine_files():
     #
     #   Ensure tweets are in lower case
     #
-    big_df["English Tweet"] = big_df["English Tweet"].str.lower()
+    #big_df["clean_tweet"] = big_df["clean_tweet"].str.lower()
     file = os.path.join(Hyper.DestDir, Hyper.HyrdatedTweetLangFile) 
     big_df.to_csv(file)
     Helper.printline("     ** Ended: Combine files for each country per selected language")
