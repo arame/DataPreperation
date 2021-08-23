@@ -2,9 +2,10 @@
 class Hyper:
     #time = "2021_08_01 16_16_57"
     #time = "2021_08_08 22_58_57"
-    time = "2021_08_11 12_02_37"
+    #time = "2021_08_11 12_02_37"
     #time = "2021_08_12 05_59_32"
     #time = "2021_08_14 10_46_28"
+    time = "2021_08_18 10_54_32"
     language = "en"
     HyrdatedTweetLangDir = f"../Summary_Details_files{time}/{language}"
     HyrdatedTweetFile = "tweets.csv"

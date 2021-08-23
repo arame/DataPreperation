@@ -25,8 +25,6 @@ def move_files_to_destination_folder():
         country_file = os.path.join(country_dir, Hyper.HyrdatedTweetFile)
         csv_input = pd.read_csv(country_file, sep=',', error_bad_lines=False, index_col=False, dtype='unicode')
         Helper.printline(f"Country {i}/{no_countries}. {country} has {len(csv_input)} entries")
-
-        #if len(csv_input) >= Hyper.Threshold:
         if country in Hyper.SelectedCountries:
             data_dir = os.path.join(Hyper.DestDir, country)
             Helper.printline(f"Country selected {country} ({len(csv_input)}), copy {country_dir} to {data_dir}")
@@ -46,7 +44,7 @@ def combine_files():
     #
     #big_df["clean_tweet"] = big_df["clean_tweet"].str.lower()
     file = os.path.join(Hyper.DestDir, Hyper.HyrdatedTweetLangFile) 
-    big_df.to_csv(file)
+    big_df.to_csv(file, index=False)
     Helper.printline("     ** Ended: Combine files for each country per selected language")
 
 def select_columns_for_new_file():
