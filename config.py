@@ -17,7 +17,7 @@ class Hyper:
     #Threshold = 400
     SelectedCountries = [ "Australia", "Canada", "China", "France", "Germany", "Ghana", "India",
                          "Ireland", "Italy", "Kenya", "Malaysia", "Netherlands",
-                         "New Zealand", "Nigeria", "Pakistan", "Philippines", "the Philippines", 
+                         "New Zealand", "Nigeria", "Pakistan", "Philippines", 
                          "South Africa", "United Kingdom", "United States"]
     input_field_names = ['Country', 'Full Text', 'clean_text', 'sentiment', 'is_facemask', 'is_lockdown']
     output_field_names = ['Country', 'Full Text', 'clean_text', 'sentiment']
