@@ -56,13 +56,17 @@ def select_columns_for_new_file():
     file_out = os.path.join(Hyper.DestDir, Hyper.OutputTweetLangFile)
     edit_df = pd.read_csv(file_in, usecols=Hyper.input_field_names)
     edit_df[Hyper.output_field_names].to_csv(file_out, index=False)
-    file_out = os.path.join(Hyper.DestDir, Hyper.FacemaskTweetLangFile)
-    facemask_df = edit_df.query('is_facemask==True')
-    facemask_df[Hyper.output_field_names].to_csv(file_out, index=False)
-    file_out = os.path.join(Hyper.DestDir, Hyper.LockdownTweetLangFile)
-    lockdown_df = edit_df.query('is_lockdown==True')
-    lockdown_df[Hyper.output_field_names].to_csv(file_out, index=False)
+    generate_theme_file(edit_df, Hyper.FacemaskTweetLangFile, 'is_facemask==True')
+    generate_theme_file(edit_df, Hyper.LockdownTweetLangFile, 'is_lockdown==True')
+    if Hyper.is_vaccine_included:
+        generate_theme_file(edit_df, Hyper.VaccineTweetLangFile, 'is_vaccine==True')
+    
     Helper.printline("     ** Ended: Select required columns for the new file")
 
+def generate_theme_file(edit_df, _file, _query):
+    file_out = os.path.join(Hyper.DestDir, _file)
+    _df = edit_df.query(_query)
+    _df[Hyper.output_field_names].to_csv(file_out, index=False)
+    
 if __name__ == "__main__":
     main()
